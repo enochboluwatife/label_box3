@@ -7,9 +7,11 @@ from . import views
 
 
 
+from django.urls import path
+from .views import home, view_annotations, AnnotationTaskView
 
 urlpatterns = [
     path('', home, name='home'),  # Home page
-    path('tasks/', AnnotationTaskView.as_view(), name='annotation_tasks'),  # API for task
-    path('view-annotations/', views.view_annotations, name='view_annotations'),
+    path('view_annotations/', view_annotations, name='view_annotations'),  # View Annotations page
+    path('api/tasks/', AnnotationTaskView.as_view(), name='annotation_tasks_api'),  # API endpoint
 ]

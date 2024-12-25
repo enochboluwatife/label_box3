@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Annotations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #6200ea;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        main {
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 1000px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+        }
+        h1 {
+            text-align: center;
+            color: #6200ea;
+        }
+        .annotation-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .annotation-item {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .annotation-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .annotation-item p {
+            margin: 1rem 0 0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Saved Annotations</h1>
+    </header>
+    <main>
+        <h1>Previously Uploaded Images</h1>
+        <div class="annotation-list">
+            {% for task in tasks %}
+            <div class="annotation-item">
+                <img src="{{ task.image_url }}" alt="Uploaded Image">
+                <p>{{ task.annotated_text }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Annotation Tool. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
