@@ -59,3 +59,4 @@ class AnnotationTaskView(APIView):
             "message": "Failed to save annotation.",
             "errors": serializer.errors
         }, status=status.HTTP_400_BAD_REQUEST)
+
