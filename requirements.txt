@@ -6,4 +6,5 @@ dnspython
 pymongo
 pytz
 sqlparse
+gunicorn
 
