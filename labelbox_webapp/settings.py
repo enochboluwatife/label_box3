@@ -9,7 +9,7 @@ SECRET_KEY = '*5^e2lj#ceuopg_n!gm3c_n&&8ibru47&&1ujd@wpa74ktmbus'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+PORT = os.environ.get('PORT', '8000')
 ALLOWED_HOSTS = ['*']
 
 # Application definition
